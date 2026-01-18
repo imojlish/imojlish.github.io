@@ -336,13 +336,20 @@
         const msg = escapeHtml(c.message || "");
 
         html += `
-          <div class="media has-border-bottom" style="padding: 12px 0;">
-            <div class="media-content">
-              <h5>${name}</h5>
-              <p>${msg}</p>
-            </div>
-          </div>
-        `;
+  <div class="media has-border-bottom" style="padding: 12px 0;">
+    <div class="media-content">
+      <h5>${name}</h5>
+      <p>${msg}</p>
+
+      ${c.adminReply ? `
+        <div style="margin-top:12px; padding-left:20px; border-left:3px solid #00d1b2;">
+          <strong>Admin reply</strong>
+          <p>${escapeHtml(c.adminReply)}</p>
+        </div>
+      ` : ""}
+    </div>
+  </div>
+`;
       });
 
       box.innerHTML = html;
@@ -382,3 +389,4 @@
 </body>
 
 </html>
+
