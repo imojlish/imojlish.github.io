@@ -93,13 +93,18 @@
 
 	// testimonial-slider
 	$('.testimonial-slider').slick({
-		dots: true,
-		infinite: true,
-		speed: 300,
-		slidesToShow: 1,
-		arrows: false,
-		adaptiveHeight: true
-	});
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  adaptiveHeight: true,
+  autoplay: true,
+  autoplaySpeed: 3500,
+  pauseOnHover: true,
+  pauseOnFocus: true
+});
 
 
 	// clients logo slider
