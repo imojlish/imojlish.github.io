@@ -748,16 +748,6 @@ textarea.input {
 }
 
 /* /footer */
-footer h5 {
-  font-family: "Playfair Display", serif;
-  letter-spacing: 0.5px;
-}
-
-footer p {
-  font-family: "Roboto", sans-serif;
-  font-size: 15px;
-}
-
 .card-lg {
   flex-direction: row-reverse;
   align-items: center;
