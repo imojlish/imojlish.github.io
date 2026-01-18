@@ -885,13 +885,14 @@ blockquote {
   font-weight: bold;
 }
 /*# sourceMappingURL=style.css.map */
+
 /* ==============================
    NAVBAR ENHANCEMENTS (Israt)
    Paste at END of style.css
 ================================ */
 
 /* Make nav text cleaner + more premium */
-.navbar-item {
+.navbar.is-dark .navbar-item {
   color: #fff !important;
   font-weight: 600;
   letter-spacing: 0.6px;
@@ -899,10 +900,24 @@ blockquote {
   text-transform: uppercase;
   position: relative;
   padding: 0.5rem 0.9rem;
+  background: transparent !important; /* prevents random dark blocks */
+}
+
+/* Remove Bulma's dark "active" background box */
+.navbar.is-dark .navbar-item.is-active {
+  background: transparent !important;
+  color: #ffd369 !important;
+  font-weight: 700;
+}
+
+/* Also prevent focus/keyboard selection from turning into a box */
+.navbar.is-dark .navbar-item:focus,
+.navbar.is-dark .navbar-item:focus-within {
+  background: transparent !important;
 }
 
 /* Subtle underline hover */
-.navbar-item::after {
+.navbar.is-dark .navbar-item::after {
   content: "";
   position: absolute;
   bottom: 6px;
@@ -914,36 +929,43 @@ blockquote {
   transform: translateX(-50%);
 }
 
-.navbar-item:hover::after {
+.navbar.is-dark .navbar-item:hover::after {
   width: 60%;
 }
 
-/* Active page */
-.navbar-item.is-active {
-  color: #ffd369 !important;
-  font-weight: 700;
+/* Optional: show underline on active page too */
+.navbar.is-dark .navbar-item.is-active::after {
+  width: 60%;
 }
 
 /* Contact as a button */
-.navbar-item.contact-btn {
-  background: #ffd369;
+.navbar.is-dark .navbar-item.contact-btn {
+  background: #ffd369 !important;
   color: #3b2a7a !important;
   border-radius: 999px;
   padding: 0.45rem 1.1rem;
   margin-left: 12px;
-  font-weight: 700;
+  font-weight: 800;
 }
 
-.navbar-item.contact-btn::after {
-  display: none; /* no underline on the button */
+/* No underline on the button */
+.navbar.is-dark .navbar-item.contact-btn::after {
+  display: none;
 }
 
-.navbar-item.contact-btn:hover {
-  background: #ffe08a;
+.navbar.is-dark .navbar-item.contact-btn:hover {
+  background: #ffe08a !important;
+}
+
+/* If Contact is the active page, keep it as a button (not just yellow text) */
+.navbar.is-dark .navbar-item.contact-btn.is-active {
+  background: #ffe08a !important;
+  color: #3b2a7a !important;
 }
 
 /* Optional: slightly clearer navbar background on scroll (your theme uses .nav-bg) */
 .navbar.nav-bg {
   box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
+
 
