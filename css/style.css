@@ -968,4 +968,9 @@ blockquote {
   box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
 
+.ti-quote-right:before,
+.ti-quote-left:before {
+  font-family: "themify" !important;
+}
+
 
