@@ -891,3 +891,65 @@ blockquote {
   font-weight: bold;
 }
 /*# sourceMappingURL=style.css.map */
+/* ==============================
+   NAVBAR ENHANCEMENTS (Israt)
+   Paste at END of style.css
+================================ */
+
+/* Make nav text cleaner + more premium */
+.navbar-item {
+  color: #fff !important;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  position: relative;
+  padding: 0.5rem 0.9rem;
+}
+
+/* Subtle underline hover */
+.navbar-item::after {
+  content: "";
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #ffd369;
+  transition: width 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navbar-item:hover::after {
+  width: 60%;
+}
+
+/* Active page */
+.navbar-item.is-active {
+  color: #ffd369 !important;
+  font-weight: 700;
+}
+
+/* Contact as a button */
+.navbar-item.contact-btn {
+  background: #ffd369;
+  color: #3b2a7a !important;
+  border-radius: 999px;
+  padding: 0.45rem 1.1rem;
+  margin-left: 12px;
+  font-weight: 700;
+}
+
+.navbar-item.contact-btn::after {
+  display: none; /* no underline on the button */
+}
+
+.navbar-item.contact-btn:hover {
+  background: #ffe08a;
+}
+
+/* Optional: slightly clearer navbar background on scroll (your theme uses .nav-bg) */
+.navbar.nav-bg {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
