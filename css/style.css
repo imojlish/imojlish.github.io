@@ -1068,3 +1068,26 @@ blockquote {
     padding: 16px;
   }
 }
+@media (max-width: 991px) {
+
+  .navbar-menu {
+    background: #ffffff !important;
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 15px;
+  }
+
+  .navbar.is-dark .navbar-menu .navbar-item {
+    color: #41228e !important;
+    font-weight: 700;
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .navbar.is-dark .navbar-menu .navbar-item.contact-btn {
+    color: #41228e !important;
+    text-align: center;
+  }
+
+}
