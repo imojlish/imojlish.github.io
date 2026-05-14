@@ -972,5 +972,116 @@ blockquote {
 .ti-quote-left:before {
   font-family: "themify" !important;
 }
+/* =========================================
+   MOBILE NAVBAR FIX + IMPROVEMENTS
+========================================= */
 
+@media (max-width: 991px) {
+
+  /* Navbar container */
+  .navbar {
+    padding: 15px 20px !important;
+    background: #41228e !important;
+  }
+
+  /* Burger icon */
+  .navbar-burger {
+    color: #fff !important;
+    height: auto;
+  }
+
+  .navbar-burger:hover {
+    background: transparent !important;
+  }
+
+  /* Mobile dropdown menu */
+  .navbar-menu {
+    background: #ffffff !important;
+    border-radius: 18px;
+    margin-top: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  }
+
+  /* Mobile menu items */
+  .navbar-menu .navbar-item {
+    color: #41228e !important;
+    display: block;
+    padding: 14px 16px;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: left;
+    border-radius: 10px;
+    background: transparent !important;
+  }
+
+  /* Remove desktop underline effect */
+  .navbar-menu .navbar-item::after {
+    display: none !important;
+  }
+
+  /* Hover effect */
+  .navbar-menu .navbar-item:hover {
+    background: #f4f1ff !important;
+    color: #41228e !important;
+  }
+
+  /* Active page */
+  .navbar-menu .navbar-item.is-active {
+    color: #ffd369 !important;
+    background: transparent !important;
+  }
+
+  /* Contact button */
+  .navbar-menu .contact-btn {
+    background: #ffd369 !important;
+    color: #3b2a7a !important;
+    border-radius: 999px;
+    text-align: center;
+    margin-top: 15px;
+    padding: 14px 20px !important;
+    width: 100%;
+    display: block;
+  }
+
+  .navbar-menu .contact-btn:hover {
+    background: #ffe08a !important;
+  }
+
+  /* Hero text responsive */
+  .hero-area h1 {
+    font-size: 52px !important;
+    line-height: 1.1;
+  }
+
+  /* Social icons spacing */
+  .list-hero-social {
+    margin-left: 20px;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE DEVICES
+========================================= */
+
+@media (max-width: 576px) {
+
+  .hero-area {
+    padding-top: 180px !important;
+    padding-bottom: 120px !important;
+  }
+
+  .hero-area h1 {
+    font-size: 42px !important;
+  }
+
+  .navbar-brand img {
+    max-height: 42px;
+  }
+
+  .navbar-menu {
+    padding: 16px;
+  }
+}
 
