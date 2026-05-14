@@ -1084,4 +1084,30 @@ blockquote {
     padding: 16px;
   }
 }
+/* FORCE MOBILE MENU TEXT TO SHOW */
+@media (max-width: 991px) {
 
+  .navbar-menu {
+    display: block;
+    background: #ffffff !important;
+  }
+
+  .navbar-menu .navbar-end {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navbar-menu .navbar-item {
+    color: #41228e !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    font-size: 16px;
+    font-weight: 700;
+    display: block !important;
+  }
+
+  .navbar-menu .navbar-item:hover {
+    background: #f5f1ff !important;
+  }
+}
