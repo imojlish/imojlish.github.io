@@ -884,14 +884,13 @@ blockquote {
 .filter-controls li.active {
   font-weight: bold;
 }
-/*# sourceMappingURL=style.css.map */
 
 /* ==============================
-   NAVBAR ENHANCEMENTS (Israt)
-   Paste at END of style.css
+   CUSTOM NAVBAR + MOBILE FIXES
+   Clean overrides for Israt portfolio
 ================================ */
 
-/* Make nav text cleaner + more premium */
+/* Desktop navbar */
 .navbar.is-dark .navbar-item {
   color: #fff !important;
   font-weight: 600;
@@ -900,23 +899,22 @@ blockquote {
   text-transform: uppercase;
   position: relative;
   padding: 0.5rem 0.9rem;
-  background: transparent !important; /* prevents random dark blocks */
+  background: transparent !important;
 }
 
-/* Remove Bulma's dark "active" background box */
+.navbar.is-dark .navbar-item:hover,
+.navbar.is-dark .navbar-item:focus,
+.navbar.is-dark .navbar-item:focus-within {
+  background: transparent !important;
+  color: #fff !important;
+}
+
 .navbar.is-dark .navbar-item.is-active {
   background: transparent !important;
   color: #ffd369 !important;
   font-weight: 700;
 }
 
-/* Also prevent focus/keyboard selection from turning into a box */
-.navbar.is-dark .navbar-item:focus,
-.navbar.is-dark .navbar-item:focus-within {
-  background: transparent !important;
-}
-
-/* Subtle underline hover */
 .navbar.is-dark .navbar-item::after {
   content: "";
   position: absolute;
@@ -929,16 +927,12 @@ blockquote {
   transform: translateX(-50%);
 }
 
-.navbar.is-dark .navbar-item:hover::after {
-  width: 60%;
-}
-
-/* Optional: show underline on active page too */
+.navbar.is-dark .navbar-item:hover::after,
 .navbar.is-dark .navbar-item.is-active::after {
   width: 60%;
 }
 
-/* Contact as a button */
+/* Contact button on desktop */
 .navbar.is-dark .navbar-item.contact-btn {
   background: #ffd369 !important;
   color: #3b2a7a !important;
@@ -948,65 +942,69 @@ blockquote {
   font-weight: 800;
 }
 
-/* No underline on the button */
 .navbar.is-dark .navbar-item.contact-btn::after {
   display: none;
 }
 
-.navbar.is-dark .navbar-item.contact-btn:hover {
-  background: #ffe08a !important;
-}
-
-/* If Contact is the active page, keep it as a button (not just yellow text) */
+.navbar.is-dark .navbar-item.contact-btn:hover,
 .navbar.is-dark .navbar-item.contact-btn.is-active {
   background: #ffe08a !important;
   color: #3b2a7a !important;
 }
 
-/* Optional: slightly clearer navbar background on scroll (your theme uses .nav-bg) */
+/* Navbar shadow after scroll */
 .navbar.nav-bg {
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
+/* Themify quote icon fallback */
 .ti-quote-right:before,
 .ti-quote-left:before {
   font-family: "themify" !important;
 }
-/* =========================================
-   MOBILE NAVBAR FIX + IMPROVEMENTS
-========================================= */
 
+/* ==============================
+   MOBILE NAVBAR FIX
+================================ */
 @media (max-width: 991px) {
-
-  /* Navbar container */
   .navbar {
     padding: 15px 20px !important;
     background: #41228e !important;
   }
 
-  /* Burger icon */
+  .navbar-brand img {
+    max-height: 42px;
+  }
+
   .navbar-burger {
     color: #fff !important;
     height: auto;
   }
 
-  .navbar-burger:hover {
+  .navbar-burger:hover,
+  .navbar-burger:focus {
     background: transparent !important;
   }
 
-  /* Mobile dropdown menu */
   .navbar-menu {
     background: #ffffff !important;
     border-radius: 18px;
     margin-top: 15px;
-    padding: 20px;
+    padding: 18px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.12);
   }
 
-  /* Mobile menu items */
+  .navbar-menu .navbar-end {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
   .navbar-menu .navbar-item {
     color: #41228e !important;
-    display: block;
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
     padding: 14px 16px;
     font-size: 16px;
     font-weight: 700;
@@ -1015,24 +1013,20 @@ blockquote {
     background: transparent !important;
   }
 
-  /* Remove desktop underline effect */
   .navbar-menu .navbar-item::after {
     display: none !important;
   }
 
-  /* Hover effect */
   .navbar-menu .navbar-item:hover {
     background: #f4f1ff !important;
     color: #41228e !important;
   }
 
-  /* Active page */
   .navbar-menu .navbar-item.is-active {
     color: #ffd369 !important;
     background: transparent !important;
   }
 
-  /* Contact button */
   .navbar-menu .contact-btn {
     background: #ffd369 !important;
     color: #3b2a7a !important;
@@ -1041,32 +1035,26 @@ blockquote {
     margin-top: 15px;
     padding: 14px 20px !important;
     width: 100%;
-    display: block;
+    display: block !important;
   }
 
   .navbar-menu .contact-btn:hover {
     background: #ffe08a !important;
+    color: #3b2a7a !important;
   }
 
-  /* Hero text responsive */
   .hero-area h1 {
     font-size: 52px !important;
     line-height: 1.1;
   }
 
-  /* Social icons spacing */
   .list-hero-social {
     margin-left: 20px;
   }
 }
 
-
-/* =========================================
-   SMALL MOBILE DEVICES
-========================================= */
-
+/* Small phones */
 @media (max-width: 576px) {
-
   .hero-area {
     padding-top: 180px !important;
     padding-bottom: 120px !important;
@@ -1076,38 +1064,7 @@ blockquote {
     font-size: 42px !important;
   }
 
-  .navbar-brand img {
-    max-height: 42px;
-  }
-
   .navbar-menu {
     padding: 16px;
-  }
-}
-/* FORCE MOBILE MENU TEXT TO SHOW */
-@media (max-width: 991px) {
-
-  .navbar-menu {
-    display: block;
-    background: #ffffff !important;
-  }
-
-  .navbar-menu .navbar-end {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .navbar-menu .navbar-item {
-    color: #41228e !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    font-size: 16px;
-    font-weight: 700;
-    display: block !important;
-  }
-
-  .navbar-menu .navbar-item:hover {
-    background: #f5f1ff !important;
   }
 }
